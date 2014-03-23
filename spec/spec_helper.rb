@@ -2,10 +2,10 @@
 ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
-require 'rspec/autorun'
 require 'capybara/rails'
 require 'database_cleaner'
 require 'factory_girl_rails'
+require 'feature_helper'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
@@ -60,15 +60,5 @@ RSpec.configure do |config|
   end
   config.after(:each) do
     DatabaseCleaner.clean
-  end
-
-
-  # sign in process
-  def sign_in(user)
-    visit new_user_session_path
-      fill_in 'Email', :with => user.email
-      fill_in 'Password', :with => user.password
-    click_button 'Log in'
-    expect(page).to have_content 'Signed in successfully.'
   end
 end

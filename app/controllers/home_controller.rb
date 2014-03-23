@@ -4,7 +4,7 @@ class HomeController < ApplicationController
   end
 
   def download
-    file_path = Rails.root.join('public/images/destination.jpg')
-    send_file file_path, :type => 'image/jpeg', :disposition => 'attachment'
+  	file_path = Rails.root.join('public/images/destination.jpg')
+  	send_file file_path, :type => 'image/jpeg', :disposition => 'attachment'
   end
 end

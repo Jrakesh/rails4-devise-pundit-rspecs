@@ -3,11 +3,14 @@
   <div class="jumbotron">
     <h3>Get your next holiday destination</h3>
     <p><%= link_to "Download", download_path, class: 'btn btn-primary glyphicon glyphicon-download-alt' %></p>
-  </div> 
-<% end %>
-<% if !current_user.nil? and current_user.admin? %>  
-  <h3>List of Users</h3>
-  <% @users.each do |user| %>
-    <p>User: <%=link_to user.email, user %> Role: <%= user.role unless user.role.nil? %></p>
-  <% end %>
+  </div>
+
+  <% if current_user.admin? %>
+    <h3>List of Users</h3>
+    <% @users.each do |user| %>
+      <p>User: <%=link_to user.email, user %> Role: <%= user.role unless user.role.nil? %></p>
+    <% end %>
+  <% else %>
+    <p>You are logged in as: <%=link_to current_user.email, current_user %></p>
+  <% end %>  
 <% end %>

@@ -14,16 +14,21 @@ gem 'bootstrap-sass', '>= 3.0.0.0'
 gem 'devise'
 gem 'pundit'
 gem 'simple_form'
-gem 'rspec-rails', :group => [:development, :test]
-gem 'factory_girl_rails', :group => [:development, :test]
-gem 'capybara', group: :test
-gem 'launchy', group: :test
-gem 'database_cleaner', group: :test
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :rbx]
   gem 'quiet_assets'
   gem 'rails_layout'
+end
+group :development, :test do
+  gem 'rspec-rails', '>= 3.0.0.beta2'
+  gem 'factory_girl_rails'
+end
+group :test do
+  gem 'capybara', github: 'jnicklas/capybara'
+  gem 'database_cleaner'
+  gem 'launchy'
+  gem 'selenium-webdriver'
 end
 group :production do
   gem 'unicorn'
