@@ -5,7 +5,6 @@ require 'rspec/rails'
 require 'capybara/rails'
 require 'database_cleaner'
 require 'factory_girl_rails'
-require 'feature_helper'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.

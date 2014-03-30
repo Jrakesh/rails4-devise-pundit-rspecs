@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-feature '#logout' do
-  scenario 'user should be logged out' do
+feature 'log out' do
+  scenario 'as a user' do
     user = FactoryGirl.create(:user)
     sign_in(user.email, user.password)
     expect(page).to have_content 'Signed in successfully.'

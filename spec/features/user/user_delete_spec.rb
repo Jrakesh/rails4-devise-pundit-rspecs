@@ -7,7 +7,7 @@ feature '#destroy', :js=>true do
     expect(page).to have_content 'Signed out successfully.'
     sign_in('otheruser@example.com', 'otheruser')
     expect(page).to have_content 'Signed in successfully.'
-    visit '/users/edit'
+    visit edit_user_registration_path
     click_button 'Cancel my account'
     page.driver.browser.switch_to.alert.accept
     expect(page).to have_content 'Bye! Your account was successfully cancelled. We hope to see you again soon.'

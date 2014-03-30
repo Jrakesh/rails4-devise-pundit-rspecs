@@ -1,13 +1,13 @@
 require 'spec_helper'
 
-feature '#admin_user' do
-  scenario 'allows admin to see list of users' do
+feature 'admin user' do
+  scenario 'should see list of users' do
     admin_user = FactoryGirl.create(:user, :admin)
     sign_in(admin_user.email, admin_user.password)
     expect(page).to have_content 'List of Users'
   end
 
-  scenario 'allows admin to manage user roles' do
+  scenario 'should manage user roles' do
     admin_user = FactoryGirl.create(:user, :admin)
     sign_in(admin_user.email, admin_user.password)
     visit users_path
@@ -15,15 +15,15 @@ feature '#admin_user' do
   end
 end
 
-feature '#visitor' do
-  scenario 'not allowed to see list of users' do
+feature 'visitor' do
+  scenario 'should not see list of users' do
     user = FactoryGirl.create(:user)
     sign_in(user.email, user.password)
     expect(page).to have_content 'Home'
     expect(page).not_to have_content 'List of Users'
   end
 
-  scenario 'not allowed to manage user roles' do
+  scenario 'should not manage user roles' do
     user = FactoryGirl.create(:user)
     sign_in(user.email, user.password)
     visit users_path

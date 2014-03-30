@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-feature '#visitor' do
-  scenario 'visits home page' do
-  	visit '/'
+feature 'visitor' do
+  scenario 'should see home page' do
+  	visit root_path
     expect(page).to have_content 'Home'
   end
 end

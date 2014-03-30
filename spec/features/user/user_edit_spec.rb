@@ -5,7 +5,7 @@ feature '#update' do
     user = FactoryGirl.create(:user)
     sign_in(user.email, user.password)
     expect(page).to have_content 'Signed in successfully.'
-    visit '/users/edit'
+    visit edit_user_registration_path
     fill_in 'Email', :with => 'newemail@example.com'
     fill_in 'Current password', :with => user.password
     click_button 'Update'
