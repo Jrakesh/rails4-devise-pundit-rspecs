@@ -1,6 +1,7 @@
 <h1>rails4-devise-pundit-rspecs</h1>
+<a href="https://codeclimate.com/github/Jrakesh/rails4-devise-pundit-rspecs"><img src="https://codeclimate.com/github/Jrakesh/rails4-devise-pundit-rspecs.png" /></a>
 
-<p>This is a <strong>Rails v4.0.2</strong> starter app and can be used as a boilerplate for your project. Start your ambitious web application instantly.</p>
+<p>This is a <strong>Rails v4.0.2</strong> starter app and can be used as a boilerplate for your project. Start your ambitious web application project instantly.</p>
 
 <p>Out-of-the-box features:</p>
 <ol>
